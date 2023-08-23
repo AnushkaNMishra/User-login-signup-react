@@ -22,19 +22,19 @@ const UserLogin = () => {
             console.log(actualData);
             document.getElementById('login-form').reset()
             setError({status:true, msg:"Login Success", type:'success'})
-            navigate('/')
+            navigate('/dashboard')
         }else{
             setError({status:true, msg:"All fields are required", type:'error'})
         }
     }
   return <>
-  <Box component='form' noValidate sx={{mt:1}} id='login-form' onSubmit={handleSubmit}>
-    <TextField margin='normal' required fullWidth id='email' name='email' label ='Email Address' />
+  <Box component='form' noValidate sx={{mt:3}} id='login-form' onSubmit={handleSubmit} textAlign='center' >
+    <TextField margin='normal' required fullWidth id='email' name='email' label ='Email Address' sx={ { textAlign: 'center' }} />
     <TextField margin='normal' required fullWidth id='password' name='password' label ='Password' type='password'/>
     <Box textAlign='center'>
         <Button type='submit' variant='contained' sx={{mt:3,mb:2,px:5}}> Login</Button>
     </Box>
-    <NavLink to='/' variant='contained'>Forgot Password?</NavLink>
+    <NavLink to='/sendpasswordresetemail' variant='contained' justifyContent='center'>Forgot Password?</NavLink>
   {error.status ? <Alert severity={error.type}>{error.msg}</Alert> : ''}
   </Box>
   </>

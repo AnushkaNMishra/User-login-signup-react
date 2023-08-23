@@ -1,9 +1,10 @@
 import { Grid, Card, Typography, Tabs, Tab, Box } from "@mui/material"
-import loginpic from '../../../images/loginpic.png'
+import login3 from '../../../images/login3.jpg'
 import { useState } from "react";
 import { calculateNewValue } from "@testing-library/user-event/dist/utils";
 import UserLogin from "./UserLogin";
 import Registration from "./Registration";
+import { hover } from "@testing-library/user-event/dist/hover";
 
 const TabPanel = (props) => {
     const { children, value, index } =props;
@@ -24,22 +25,23 @@ const LoginReg = () => {
         setValue(newValue);
     }
   return <>
-    <Grid container sx={{height:'80vh'}}>
+    <Grid container sx={{height:'85vh'}}>
         <Grid item lg={7} sm={5} sx={{
-            backgroundImage:`url(${loginpic})`, 
+            backgroundImage:`url(${login3})`, 
             backgroundRepeat:'no-repeat',
-            backgroundSize:'cover',
+            backgroundSize:'370px',
             backgroundPosition:'center',
+            marginTop:'20px',
             display:{xs:'none', sm:'block'}
         }}>
             </Grid>
         <Grid item lg={5} sm={7} xs={12}>
-            <Card sx={{width:'100%',height:'100%'}}>
+            <Card sx={{width:'90%',height:'80%', marginTop:'100px'}}>
                 <Box>
-                    <Box sx={{borderBottom:1, borderColor:'divider'}}>
-                        <Tabs value={value} textColor='secondary' indicatorColor='secondary' onChange={handleChange}>
-                            <Tab label='Login' sx={{fontWeight:'bold'}}></Tab>
-                            <Tab label='Registration' sx={{fontWeight:'bold'}}></Tab>
+                    <Box sx={{borderBottom:5, borderColor:'green'}}>
+                        <Tabs value={value} textColor='primary' indicatorColor='primary'  onChange={handleChange}>
+                            <Tab label='Loginn' sx={{fontWeight:'bold', marginLeft:'90px', justifyContent:'center', color:'green'}}></Tab>
+                            <Tab label='Registration' sx={{fontWeight:'bold', marginLeft:'90px', color:'green'}}></Tab>
                         </Tabs>
                     </Box>
                     <TabPanel value={value} index={0}>

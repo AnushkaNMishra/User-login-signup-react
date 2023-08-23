@@ -26,7 +26,10 @@ const Registration = () => {
               console.log(actualData);
               document.getElementById('registration-form').reset()
               setError({ status: true, msg: "Registration Successful", type: 'success' })
-              navigate('/')
+             
+                navigate('dashboard')
+              
+              
             } else {
               setError({ status: true, msg: "Password and Confirm Password Doesn't Match", type: 'error' })
             }
@@ -35,7 +38,7 @@ const Registration = () => {
           }
         }
   return <>
-  <Box component='form' noValidate sx={{mt:1}} id='registration-form' onSubmit={handleSubmit}>
+  <Box component='form' noValidate sx={{mt:1}} id='registration-form' onSubmit={handleSubmit} justifyContent='center'>
     <TextField margin='normal' required fullWidth id='name' name='name' label ='Name' />
     <TextField margin='normal' required fullWidth id='email' name='email' label ='Email Address' />
 
